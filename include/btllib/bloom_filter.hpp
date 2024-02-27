@@ -170,8 +170,10 @@ public:
   /** Get the name of the hash function used. */
   const std::string& get_hash_fn() const { return hash_fn; }
 
-  /**
-   * Save the Bloom filter to a file that can be loaded in the future.
+  // TESTING!
+  void apply_and(const BloomFilter&);
+
+  /** Save the Bloom filter to a file that can be loaded in the future.
    *
    * @param path Filepath to store filter at.
    */

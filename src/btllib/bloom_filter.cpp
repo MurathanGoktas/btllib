@@ -46,6 +46,16 @@ BloomFilter::BloomFilter(size_t bytes, unsigned hash_num, std::string hash_fn)
 }
 
 void
+BloomFilter::apply_and(const BloomFilter& rhs){
+  check_error(bytes != rhs.bytes,
+ 		"Sizes of Bloom Filters doesn't match");
+#pragma omp parallel for
+  for(size_t i = 0; i < array_size; ++i){
+    array[i] = array[i] & rhs.array[i];
+  }
+}
+
+void
 BloomFilter::insert(const uint64_t* hashes)
 {
   for (unsigned i = 0; i < hash_num; ++i) {
