@@ -315,7 +315,7 @@ MIBloomFilterInitializer::parse_header(const std::string& expected_signature)
   if (!header_end_found) {
     log_error("Pre-built multi-index Bloom filter does not have the correct "
               "header end.");
-    std::exit(EXIT_FAILURE); // NOLINT(concurrency-mt-unsafe)
+    //std::exit(EXIT_FAILURE); // NOLINT(concurrency-mt-unsafe)
   }
   for (unsigned i = 0; i < PLACEHOLDER_NEWLINES_MIBF; i++) {
     std::getline(ifs_id_arr, line);
