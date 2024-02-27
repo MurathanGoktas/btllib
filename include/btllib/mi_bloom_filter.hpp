@@ -27,7 +27,7 @@ public:
                            const std::string& signature)
     : path(path)
     , ifs_id_arr(path)
-    , table(parse_header(signature))
+    //, table(parse_header(signature))
   {
   }
 
