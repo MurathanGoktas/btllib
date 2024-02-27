@@ -169,6 +169,8 @@ public:
   double get_fpr() const;
   /** Get the name of the hash function used. */
   const std::string& get_hash_fn() const { return hash_fn; }
+  /** Applies in-place intersection of two Bloom filtes. */
+  void apply_and(const BloomFilter&);
 
   /**
    * Save the Bloom filter to a file that can be loaded in the future.
