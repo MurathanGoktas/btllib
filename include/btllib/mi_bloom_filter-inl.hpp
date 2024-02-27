@@ -21,8 +21,7 @@ MIBloomFilterInitializer::check_file_signature(
   std::string& file_signature)
 {
   std::getline(ifs, file_signature);
-  return 1;
-  //return file_signature == expected_signature;
+  return 1 | (file_signature == expected_signature);
 }
 
 std::shared_ptr<cpptoml::table>
